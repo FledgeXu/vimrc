@@ -1,4 +1,5 @@
 set tags+=/usr/include/c++/6/stdcpp.tags
+set backspace=indent,eol,start
 set textwidth=79  " lines longer than 79 columns will be broken
 set shiftwidth=4  " operation >> indents 4 columns; << unindents 4 columns
 set tabstop=4     " a hard TAB displays as 4 columns
@@ -33,6 +34,13 @@ Plugin 'w0rp/ale'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'octol/vim-cpp-enhanced-highlight'
+Plugin 'altercation/vim-colors-solarized'
+Plugin 'tpope/vim-surround'
+Plugin 'SirVer/ultisnips'
+Plugin 'honza/vim-snippets'
+Plugin 'scrooloose/nerdtree'
+Plugin 'Yggdroot/indentLine'
+Plugin 'Raimondi/delimitMate'
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
 " plugin on GitHub repo
@@ -73,3 +81,16 @@ let g:cpp_member_variable_highlight = 1
 let g:cpp_experimental_simple_template_highlight = 1
 let g:cpp_experimental_template_highlight = 1
 let g:cpp_concepts_highlight = 1
+if has("gui_running")
+au GUIEnter * simalt ~x 
+set guioptions-=m 
+set guioptions-=T 
+set guioptions-=L 
+set guioptions-=r 
+set guioptions-=b 
+set showtabline=0 
+set background=light
+colorscheme solarized
+set guifont=SourceCodePro\ 13
+endif
+autocmd vimenter * NERDTree
